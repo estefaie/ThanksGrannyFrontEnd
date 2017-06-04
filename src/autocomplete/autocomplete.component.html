@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input id="country" type="text" class="typeahead" [(ngModel)]=query (keyup)=filter()>
+    </div>
+    <div *ngIf="filteredList.length > 0">
+        <ul style="display: block; width: 100%; margin-left:30px;" class="typeahead dropdown-menu">
+            <li *ngFor="let item of filteredList">
+                <a (click)="select(item)">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
